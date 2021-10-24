@@ -8,7 +8,7 @@ module.exports = {
 	run: async (client, message, args) => {
 		const msg = await message.channel.send('Pingelés...');
 		const Embed = new MessageEmbed()
-			.setTitle('Pong!')
+			.setTitle('Ping!')
 			.setAuthor(`${message.author.username}`, message.author.displayAvatarURL())
 			.setDescription(
 				`⌛ Késedelem ${Math.floor(

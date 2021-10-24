@@ -20,25 +20,25 @@ module.exports = {
     }
 
     if (message.mentions.users.first().bot) {
-      return message.channel.send("Bot are not allowed to have warnings");
+      return message.channel.send("Nem tudsz BOTOT Warnolni!");
     }
 
     if (message.author.id === user.id) {
-      return message.channel.send("You are not allowed to reset your warnings");
+      return message.channel.send("Nem tudod a saját warnodat/warnjaidat resetelni!");
     }
 
     let warnings = db.get(`warnings_${message.guild.id}_${user.id}`);
 
     if (warnings === null) {
-      return message.channel.send(`${message.mentions.users.first().username} do not have any warnings`);
+      return message.channel.send(`${message.mentions.users.first().username} nincsenek warnjaid!`);
     }
 
     db.delete(`warnings_${message.guild.id}_${user.id}`);
     user.send(
-      `Your all warnings are reseted by ${message.author.username} from ${message.guild.name}`
+      `Minden warnt töröltél  ${message.author.username} tőle ${message.guild.name}`
     );
     await message.channel.send(
-      `Reseted all warnings of ${message.mentions.users.first().username}`
+      `Minden warn törölve! ${message.mentions.users.first().username}`
     );
   }
 };

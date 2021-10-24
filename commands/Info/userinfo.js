@@ -79,11 +79,11 @@ module.exports = {
       embed.setAuthor(user.user.tag, user.user.displayAvatarURL({ dynamic: true }))
 
       //CHECK IF USER HAVE NICKNAME
-      if (user.nickname !== null) embed.addField("Nickname", user.nickname)
+      if (user.nickname !== null) embed.addField("Becenév", user.nickname)
       embed.addField("Belépett ekkor:", moment(user.joinedAt).format("LLLL"))
         .addField("Account készült:", moment(user.user.createdAt).format("LLLL"))
         .addField("Kisebb infók", `ID: \`${user.user.id}\`\nDiscriminator: ${user.user.discriminator}\nBot: ${user.user.bot}\nDeleted User: ${user.deleted}`)
-        .addField("Badges", newbadges.join(", ").toLowerCase() || "None")
+        .addField("Badgek", newbadges.join(", ").toLowerCase() || "None")
         .setFooter(user.user.presence.status, stat[user.user.presence.status])
 
 

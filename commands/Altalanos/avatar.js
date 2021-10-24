@@ -17,7 +17,7 @@ var embed = new Discord.MessageEmbed()
 
 var u = new MessageButton()
 .setStyle(`url`)
-.setLabel(`Download Avatar`)
+.setLabel(`Avatar letöltése`)
 .setURL(`${user.displayAvatarURL()}`)
 
 var row = new MessageActionRow()

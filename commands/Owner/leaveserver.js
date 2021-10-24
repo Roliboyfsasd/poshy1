@@ -20,21 +20,21 @@ module.exports = {
 		    const guildId = args[0];
  
     if (!guildId) {
-      return message.channel.send("Please provide an id");
+      return message.channel.send("Adj meg egy ID-t");
     }
  
     const guild = client.guilds.cache.find((g) => g.id === guildId);
  
     if (!guild) {
-      return message.channel.send("That guild wasn't found");
+      return message.channel.send("A Szerver nem található!");
     }
  
     try {
       await guild.leave();
-      message.channel.send(`Successfully left guild: **${guild.name}**`);
+      message.channel.send(`Sikeresen elhagytam: **${guild.name}**`);
     } catch (e) {
       console.error(e);
-      return message.channel.send("An error occurred leaving that guild");
+      return message.channel.send("Hiba lépett fel a kilépéskor!");
     }
     }
   }
