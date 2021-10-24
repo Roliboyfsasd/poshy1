@@ -15,7 +15,6 @@ const axios = require('axios');
 const db = require('quick.db');
 const embed = new Discord.MessageEmbed()
 const path = require("path");
-const Database = require("@replit/database")
 let cpuStat = require("cpu-stat")
 const Enmap = require("enmap")                 
 const canvacord = require("canvacord")         
