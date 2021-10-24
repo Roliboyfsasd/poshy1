@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const botconfig = require("./botconfig.json");
+const tokenfile  = require("./tokenfile.json")
 const math = require("mathjs");
 const ms = require('ms');
 const { parse } = require("twemoji-parser");
@@ -15,6 +16,7 @@ const axios = require('axios');
 const db = require('quick.db');
 const embed = new Discord.MessageEmbed()
 const path = require("path");
+const Database = require("@replit/database")
 let cpuStat = require("cpu-stat")
 const Enmap = require("enmap")                 
 const canvacord = require("canvacord")         
@@ -371,4 +373,4 @@ bot.on('messageReactionAdd', async (reaction, user) => {
 
 
 }})
-bot.login(process.env.BOT_TOKEN);
+bot.login(tokenfile.token);
